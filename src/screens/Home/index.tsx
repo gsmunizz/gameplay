@@ -6,7 +6,7 @@ import { styles } from "./style";
 
 import { CategorySelect } from "../../components/CategorySelect";
 import { ListDivider } from "../../components/ListDivider";
-import { Appointment } from "../../components/Appontment";
+import { Appointment } from "../../components/Appointment";
 import { Background } from "../../components/Background";
 import { ListHeader } from "../../components/ListHeader";
 import { ButtonAdd } from "../../components/ButtonAdd";
