@@ -15,7 +15,7 @@ import { Profile } from "../../components/Profile";
 export function Home() {
   const [category, setCategory] = useState("");
 
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
   const appointments = [
     {
@@ -51,11 +51,11 @@ export function Home() {
   }
 
   function handleAppointmentDetails() {
-    navigation.navigate('AppointmentDetails')
+    navigation.navigate("AppointmentDetails");
   }
 
   function handleAppointmentCreate() {
-    navigation.navigate('AppointmentCreate')
+    navigation.navigate("AppointmentCreate");
   }
 
   return (
@@ -65,28 +65,24 @@ export function Home() {
         <ButtonAdd onPress={handleAppointmentCreate} />
       </View>
 
-      <View>
-        <CategorySelect
-          categorySelected={category}
-          setCategory={handleCategorySelect}
-        />
-        <View style={styles.content}>
-          <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+      <CategorySelect
+        categorySelected={category}
+        setCategory={handleCategorySelect}
+      />
 
-          <FlatList
-            data={appointments}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => 
-              <Appointment 
-                data={item} 
-                onPress={handleAppointmentDetails}
-              />}
-            ItemSeparatorComponent={() => <ListDivider />}
-            style={styles.matches}
-            showsVerticalScrollIndicator={false}
-          />
-        </View>
-      </View>
+      <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+
+      <FlatList
+        data={appointments}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <Appointment data={item} onPress={handleAppointmentDetails} />
+        )}
+        ItemSeparatorComponent={() => <ListDivider />}
+        contentContainerStyle={{paddingBottom: 69}}
+        style={styles.matches}
+        showsVerticalScrollIndicator={false}
+      />
     </Background>
   );
 }

@@ -11,7 +11,6 @@ import {
 
 import { styles } from "./style";
 import { theme } from "../../global/styles/theme";
-import { BannerImg } from "../../assets/banner.png";
 
 import { ListDivider } from "../../components/ListDivider";
 import { Background } from "../../components/Background";
@@ -21,6 +20,8 @@ import { Members } from "../../components/Members";
 import { Header } from "../../components/Header";
 
 export function AppointmentDetails() {
+  const bannerImg = "../../assets/banner.png";
+
   const members = [
     {
       id: "1",
@@ -53,7 +54,8 @@ export function AppointmentDetails() {
         }
       />
 
-      <ImageBackground source={BannerImg} style={styles.banner}>
+      
+      <ImageBackground source={require(bannerImg)} style={styles.banner}>
         <View style={styles.bannerContent}>
           <Text style={styles.title}>Lendários</Text>
           <Text style={styles.subtitle}>
